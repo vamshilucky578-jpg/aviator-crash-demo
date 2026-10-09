@@ -1,0 +1,24 @@
+{
+  "name": "aviator-crash-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Aviator crash game demo with Express and Socket.IO",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "aviator",
+    "crash-game",
+    "socket.io",
+    "nodejs",
+    "casino-demo"
+  ],
+  "author": "Copilot",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5"
+  }
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aviator Crash Game</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <button id="soundToggle" class="sound-toggle" title="Toggle sound">🔊</button>
+
+  <div class="container">
+    <header>
+      <h1>🛩️ Aviator Crash</h1>
+    </header>
+
+    <div class="game-wrapper">
+      <div class="main-game">
+        <div id="multiplier">1.00x</div>
+        <canvas id="gameCanvas" width="600" height="300"></canvas>
+
+        <div class="controls">
+          <button id="startBtn">▶ Start Flight</button>
+          <button id="cashoutBtn" disabled>💰 Cash Out</button>
+        </div>
+
+        <div id="status" class="status"></div>
+        <div id="crashInfo" class="crash-info"></div>
+      </div>
+
+      <div class="sidebar">
+        <div class="panel">
+          <h3>💰 Betting</h3>
+          <div class="bet-section">
+            <label for="betInput">Bet Amount ($)</label>
+            <input id="betInput" type="number" min="1" max="1000" step="1" value="10" />
+            <div class="quick-bet">
+              <button type="button" data-bet="5">$5</button>
+              <button type="button" data-bet="10">$10</button>
+              <button type="button" data-bet="25">$25</button>
+              <button type="button" data-bet="50">$50</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>🎮 Lobby</h3>
+          <div class="stats-display">
+            <div class="stat-row">
+              <span class="stat-label">Players</span>
+              <span class="stat-value" id="playersDisplay">0</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Round</span>
+              <span class="stat-value" id="roundDisplay">0</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Crash</span>
+              <span class="stat-value" id="crashDisplay">1.00x</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>📊 Stats</h3>
+          <div class="stats-display">
+            <div class="stat-row">
+              <span class="stat-label">Balance</span>
+              <span class="stat-value" id="balanceDisplay">$1000</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Rounds</span>
+              <span class="stat-value" id="roundsDisplay">0</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Wins</span>
+              <span class="stat-value" id="winsDisplay">0</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Losses</span>
+              <span class="stat-value" id="lossesDisplay">0</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Best</span>
+              <span class="stat-value" id="bestDisplay">0.00x</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Win Rate</span>
+              <span class="stat-value" id="winRateDisplay">0%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="history-section">
+      <h3>📈 Recent Rounds</h3>
+      <div id="historyList" class="history-list"></div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

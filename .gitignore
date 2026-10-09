@@ -1,0 +1,9 @@
+# Ignore dependency folders
+node_modules/
+
+# Logs
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
